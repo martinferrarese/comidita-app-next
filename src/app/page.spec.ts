@@ -17,9 +17,9 @@ describe('Página inicial', () => {
     );
   });
 
-  it.skip('debe mostrar una lista de comidas', () => {
+  it('debe mostrar el listado de comidas', () => {
     render(Home());
 
-    expect(screen.getByTestId('lista-de-comidas')).toBeTruthy();
+    expect(screen.getAllByTestId('lista-de-comidas')).toBeTruthy();
   });
 });
