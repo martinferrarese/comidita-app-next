@@ -18,27 +18,6 @@ describe('Página inicial', () => {
   });
 
   it.skip('debe mostrar una lista de comidas', () => {
-    const listaDeComidas = [
-      {
-        comida: 'Milanesas con puré',
-        ingredientes: [
-          'milanesa de carne',
-          'pan rallado',
-          'panko',
-          'huevo',
-          'ajo',
-          'papa',
-          'manteca',
-          'leche',
-          'sal',
-        ],
-      },
-      {
-        comida: 'Fideos con crema',
-        ingredientes: ['fideos', 'crema', 'pimienta', 'sal'],
-      },
-    ];
-
     render(Home());
 
     expect(screen.getByTestId('lista-de-comidas')).toBeTruthy();
