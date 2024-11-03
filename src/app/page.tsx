@@ -1,4 +1,5 @@
 'use client';
+import { Accordion } from '../components/accordion';
 import { obtenerTodasLasComidas } from '../services/comidas/comidas';
 
 type Comida = {
@@ -46,6 +47,11 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <Accordion titulo={listaDeComidas[1].nombre}>
+          {listaDeComidas[1].ingredientes.map((ingrediente) => (
+            <span key={ingrediente}>{ingrediente}</span>
+          ))}
+        </Accordion>
       </main>
       <footer className='row-start-3 flex flex-wrap items-center justify-center gap-6 pt-20'>
         <h3 data-testid='texto-footer'>Hecho por Martín Ferrarese</h3>
@@ -58,15 +64,11 @@ function toggleAccordion(index: number) {
   const content = document.getElementById(`content-${index}`);
   const icon = document.getElementById(`icon-${index}`);
 
-  // SVG for Down icon
-  // SVG for Minus icon
   const minusSVG = `
    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
      <path d="M3.75 7.25a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Z" />
    </svg>
  `;
-
-  // SVG for Plus icon
   const plusSVG = `
    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
      <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />

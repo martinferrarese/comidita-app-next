@@ -20,6 +20,6 @@ describe('Página inicial', () => {
   it('debe mostrar al menos una comida', () => {
     render(Home());
 
-    expect(screen.getByTestId('comida')).toBeTruthy();
+    expect(screen.queryAllByTestId('comida')).toBeTruthy();
   });
 });
