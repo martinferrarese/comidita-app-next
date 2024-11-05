@@ -4,6 +4,7 @@ import React, { FC, ReactNode } from 'react';
 
 type AccordionProps = {
   titulo: string;
+  index: string;
   children: ReactNode;
 };
 
@@ -22,11 +23,14 @@ export const Accordion: FC<AccordionProps> = (props) => {
   return (
     <div data-testid='comida' className='border-b border-slate-200'>
       <button
-        onClick={() => abrir(2)}
+        onClick={() => abrir(props.index)}
         className='flex w-full items-center justify-between gap-6 py-5'
       >
         <span>{props.titulo}</span>
-        <span id='icon-2' className='transition-transform duration-300'>
+        <span
+          id={`icon-${props.index}`}
+          className='transition-transform duration-300'
+        >
           <svg
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 16 16'
@@ -38,7 +42,7 @@ export const Accordion: FC<AccordionProps> = (props) => {
         </span>
       </button>
       <div
-        id='content-2'
+        id={`content-${props.index}`}
         className='max-h-0 overflow-hidden transition-all duration-300 ease-in-out'
       >
         <div className='flex flex-col pb-5 text-sm text-slate-500'>
@@ -49,7 +53,7 @@ export const Accordion: FC<AccordionProps> = (props) => {
   );
 };
 
-function abrir(index: number) {
+function abrir(index: string) {
   const content = document.getElementById(`content-${index}`);
   const icon = document.getElementById(`icon-${index}`);
 
