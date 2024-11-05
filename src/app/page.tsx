@@ -10,7 +10,7 @@ type Comida = {
 export default function Home() {
   const listaDeComidas: Array<Comida> = obtenerTodasLasComidas();
   return (
-    <div className='grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center p-8 pb-20 font-[family-name:var(--font-geist-sans)]'>
+    <div className='grid min-h-screen grid-rows-[20px_1fr_20px] justify-items-center p-8 pb-20 font-[family-name:var(--font-geist-sans)]'>
       <main className='row-start-2 flex flex-col items-center gap-8 sm:items-start'>
         <div className='flex self-center'>
           <h1 data-testid='titulo'>COMIDITA</h1>
@@ -28,11 +28,7 @@ export default function Home() {
                 fill='currentColor'
                 className='h-4 w-4'
               >
-                <path
-                  fill-rule='evenodd'
-                  d='M11.78 9.78a.75.75 0 0 1-1.06 0L8 7.06 5.28 9.78a.75.75 0 0 1-1.06-1.06l3.25-3.25a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06Z'
-                  clip-rule='evenodd'
-                />
+                <path d='M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z' />
               </svg>
             </span>
           </button>
@@ -53,7 +49,7 @@ export default function Home() {
           ))}
         </Accordion>
       </main>
-      <footer className='row-start-3 flex flex-wrap items-center justify-center gap-6 pt-20'>
+      <footer className='row-start-3 flex flex-wrap items-center justify-center text-center'>
         <h3 data-testid='texto-footer'>Hecho por Martín Ferrarese</h3>
       </footer>
     </div>
